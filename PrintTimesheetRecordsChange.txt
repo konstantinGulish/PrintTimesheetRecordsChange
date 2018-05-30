@@ -1,0 +1,18 @@
+Change Activity: Process Timesheet Records
+Print_Hours_Billed_To_Project
+Print "Employee Hours Billed to Project" heading
+Print "Full-time employees" heading
+    DOWHILE morerecords exist
+		Read timesheet record
+        IF timesheet_status = 'FT' THEN
+            Print EmployeeID, Department, Billing Rate, Hours Worked
+        ENDIF
+    ENDDO
+	Print "Part-time employees" heading
+	DOWHILE morerecords exist
+		Read timesheet record
+        IF timesheet_status = 'PTT' THEN
+            Print EmployeeID, Department, Billing Rate, Hours Worked
+        ENDIF
+	ENDDO
+END
